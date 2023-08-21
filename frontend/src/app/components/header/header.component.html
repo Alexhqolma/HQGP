@@ -1,0 +1,22 @@
+<div class="header">
+  <div class="page">
+    <div class="header_menu">
+      <span *ngIf="! isLoggedIn()">
+        <a href="#benefits" title="">Benefits</a>
+        <a href="#faq" title="">FAQ</a>
+        <a href="#aboutus" title="">About Us</a>
+        <a href="#contactform" title="">Contact Us</a>
+        <a routerLink="/login" style="margin-right:5px;">Log In</a>
+        <span>/</span>
+        <a routerLink="/signup" style="margin-left:5px;">Sign Up</a>
+      </span>
+      <span *ngIf="isLoggedIn()">
+        <a *ngIf="userService.roleMatch(['ADMIN', 'USER'])" href="/dashboard">Dashboard</a>
+        <a routerLink="/logout" style="margin-left:5px;" (click)="logout()" >Log Out</a>
+      </span>
+    </div>
+    <div class="clear"></div>
+    <a routerLink="/" title="Guest Posting" class="fl"><img src="./assets/img/logo.png" alt="" title="" width="151" height="80"></a>
+    <div class="clear"></div>
+  </div>
+</div>

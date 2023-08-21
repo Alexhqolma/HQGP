@@ -1,0 +1,41 @@
+<div class="page">
+  <div class="clear_big"></div>
+  <h2>Login form</h2>
+  <script>
+    function onClick(e) {
+      e.preventDefault();
+      grecaptcha.enterprise.ready(async () => {
+        const token = await grecaptcha.enterprise.execute('6LeMEqonAAAAAMkzt_SbhOyk0hutwyzn8TpbnVh8', {action: 'LOGIN'});
+      });
+    }
+  </script>
+  <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+    <table width="100%" cellspacing="0" cellpadding="0" border="0">
+      <tbody>
+      <tr>
+        <td class="large">E-mail</td>
+        <td><div class="contact_form_bagr"><input type="text" class="st_input_form" ngModel name="email" id="email"></div></td>
+      </tr>
+      <tr>
+        <td colspan="2"><div class="clear_big"></div></td>
+      </tr>
+      <tr>
+        <td class="large">Password</td>
+        <td><div class="contact_form_bagr"><input type="password" class="st_input_form" ngModel name="password" id="password"></div></td>
+      </tr>
+      <tr>
+        <td class="large">&nbsp;</td>
+        <td><div class="contact_form_bagr" style="text-align: right;margin-top:10px;"><a href="/restore">Forgot password?</a></div></td>
+      </tr>
+      <tr>
+        <td class="large">&nbsp;</td>
+        <td>
+          <div class="contact_form_bagr morepad">
+            <input type="submit" value="LogIn" class="send_form sendmes fl">
+            <div class="clear"></div>
+          </div>
+        </td>
+      </tr>
+      </tbody></table>
+  </form>
+</div>

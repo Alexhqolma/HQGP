@@ -1,0 +1,37 @@
+<div class="page">
+  <div class="clear_big"></div>
+  <h2>Sign Up</h2>
+  <form #signupForm="ngForm" (ngSubmit)="signup(signupForm)">
+    <table width="100%" cellspacing="0" cellpadding="0" border="0">
+      <tbody>
+      <tr>
+        <td class="large">E-mail</td>
+        <td><div class="contact_form_bagr"><input type="text" class="st_input_form" ngModel name="email" id="email"></div></td>
+      </tr>
+      <tr>
+        <td colspan="2"><div class="clear_big"></div></td>
+      </tr>
+      <tr>
+        <td class="large">Full Name</td>
+        <td><div class="contact_form_bagr"><input type="text" class="st_input_form" ngModel name="fullName" id="fullName"></div></td>
+      </tr>
+      <tr>
+        <td colspan="2"><div class="clear_big"></div></td>
+      </tr>
+      <tr>
+        <td class="large">Password</td>
+        <td><div class="contact_form_bagr"><input type="password" class="st_input_form" ngModel name="password" id="password"></div></td>
+      </tr>
+      <tr>
+        <td class="large">&nbsp;</td>
+        <td>
+          <div class="contact_form_bagr morepad">
+            <input type="submit" value="Sign Up" class="send_form sendmes fl">
+            <div class="clear"></div>
+          </div>
+        </td>
+      </tr>
+      </tbody></table>
+  </form>
+</div>
+
