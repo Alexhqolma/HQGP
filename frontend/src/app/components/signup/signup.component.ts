@@ -9,8 +9,6 @@ import { UserService } from '../../services/user.service';
 })
 export class SignupComponent implements OnInit{
 
-  error = null;
-
   constructor(
     private userService: UserService
   ) {
@@ -20,11 +18,7 @@ export class SignupComponent implements OnInit{
   }
 
   signup(signupForm:NgForm) {
-    this.userService.signup(signupForm.value).subscribe(
-      (error) => {
-        this.error = error.message;
-      }
-    );
+    this.userService.signup(signupForm.value).subscribe();
   }
 
 }

@@ -15,7 +15,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Service
-public class JwtService {
+public class JwtTokenProvider {
     private static final String SECRET_KEY = "3e51b943a06269dece4992332327688152a330d7624eae893c3ff1a63e88227d";
     private static final int EXP_TIME = 1000 * 60 * 24;
 

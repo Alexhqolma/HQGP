@@ -1,4 +1,4 @@
-package com.hqguestposting.security;
+package com.hqguestposting.security.jwt;
 
 import org.apache.tomcat.util.codec.binary.Base64;
 import org.json.JSONException;

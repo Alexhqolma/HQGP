@@ -1,4 +1,4 @@
-package com.hqguestposting.security;
+package com.hqguestposting.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

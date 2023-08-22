@@ -1,9 +1,8 @@
 package com.hqguestposting.controller;
 
 import com.hqguestposting.dto.request.UserRequestDto;
-import com.hqguestposting.dto.response.UserResponseDto;
-import com.hqguestposting.security.AuthenticationResponse;
-import com.hqguestposting.security.AuthenticationService;
+import com.hqguestposting.dto.response.AuthenticationResponse;
+import com.hqguestposting.service.AuthenticationService;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,21 +14,19 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/auth")
 public class AuthenticationController {
     private final AuthenticationService authenticationService;
-    /*@Value("${recaptcha.secret}")
-    private String reCaptchaSecret;*/
 
     public AuthenticationController(AuthenticationService authenticationService) {
         this.authenticationService = authenticationService;
     }
 
     @PostMapping("/login")
-    public ResponseEntity<AuthenticationResponse> login(@RequestBody UserResponseDto userResponseDto) {
-        return ResponseEntity.ok((authenticationService.login(userResponseDto)));
+    public ResponseEntity<AuthenticationResponse> login(@RequestBody UserRequestDto userRequestDto) {
+        return ResponseEntity.ok((authenticationService.login(userRequestDto)));
     }
 
     @PostMapping("/signup")
     public ResponseEntity<AuthenticationResponse> registration(
             @RequestBody @Valid UserRequestDto userRequestDto) {
-        return ResponseEntity.ok((authenticationService.registration(userRequestDto)));
+        return ResponseEntity.ok((authenticationService.register(userRequestDto)));
     }
 }
